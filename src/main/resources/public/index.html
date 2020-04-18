@@ -42,7 +42,7 @@
 		if(command.match(/^(>.*)/)){	
 			var input = encodeURIComponent(command.substring(1));
 			$.get('http://localhost:8080/console/' + input, function(response) {
-				 con.log('<' + response);
+				 con.log('< ' + response);
 			});
 		}else if(command.match(/^((Well|So|Um|Uh),? )?(Hi|Hello|Hey|Greetings|Hola)/i)){
 			con.log((command.match(/^[A-Z]/) ? "Hello" : "hello") + (command.match(/\.|!/) ? "." : ""));

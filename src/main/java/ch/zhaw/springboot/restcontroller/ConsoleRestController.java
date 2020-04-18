@@ -11,6 +11,7 @@ public class ConsoleRestController {
 
 	@GetMapping("console/{in}")
 	public ResponseEntity<String> echo(@PathVariable("in") String in) {
-		return new ResponseEntity<String>(in, HttpStatus.OK);
+
+		return new ResponseEntity<String>(new StringBuilder(in).reverse().toString(), HttpStatus.OK);
 	}
 }
